@@ -19,11 +19,12 @@
 #endif
 
 #ifdef DEBUG
-#define ULog(...)
-//#define ULog(fmt, ...)  { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show]; }
+#define MLog(...) NSLog(__VA_ARGS__)
 #else
-#define ULog(...)
+#define MLog(...)
 #endif
+
+#define MLogFunc MLog(@"%s", __func__)
 
 //System version utils
 

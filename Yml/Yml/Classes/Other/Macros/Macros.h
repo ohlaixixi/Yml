@@ -10,14 +10,9 @@
 #define Macros_h
 
 #import "UtilsMacros.h"
+#import "APIStringMacros.h"
 
-#ifdef DEBUG
-#define MLog(...) MLog(__VA_ARGS__)
-#else
-#define MLog(...)
-#endif
-
-#define MLogFunc QBLog(@"%s", __func__)
+#define SIGN_KEY @"ebd696f30f9f53ea721ef714ab99b1ba"
 
 #define GLOBAL_COLOR RGB(255, 53, 93)
 #define GLOBAL_BACKGROUND_COLOR RGB(248, 248, 248)

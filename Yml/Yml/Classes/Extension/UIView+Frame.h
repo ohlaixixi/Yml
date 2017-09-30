@@ -19,5 +19,5 @@
 /**
  *  撤销键盘
  */
-- (void)cancelKeyboard;
+- (void)dismissKeyboard;
 @end

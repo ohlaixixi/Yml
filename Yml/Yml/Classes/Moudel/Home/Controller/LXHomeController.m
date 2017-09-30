@@ -17,21 +17,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = GLOBAL_BACKGROUND_COLOR;
+    
+    NSDictionary *params = @{@"uid":@"",
+                             @"token":@"11"};
+    
+//    [[NetworkTool sharedNetworkTool] post:@"?method=msg.readNum"
+//                           parameters:nil
+//                            success:^(NSURLSessionDataTask *task, id responseObject) {
+//                                
+//                                MLog(@"%@",responseObject);
+//
+//                            } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//                                MLog(@"==>%@",error);
+//    }];
+    [[NetworkTool sharedNetworkTool] post:@"?method=msg.readNum" parameters:params success:^(id responseObject) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(NSString*)DataTOjsonString:(id)object
+{
+    NSString *jsonString = nil;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

@@ -6,13 +6,13 @@
 //  Copyright © 2017年 xi. All rights reserved.
 //
 
-#import "LXBaseNavigationController.h"
+#import "BaseNavigationController.h"
 
-@interface LXBaseNavigationController ()
+@interface BaseNavigationController ()
 
 @end
 
-@implementation LXBaseNavigationController
+@implementation BaseNavigationController
 
 + (void)initialize{
     // 导航栏分隔线

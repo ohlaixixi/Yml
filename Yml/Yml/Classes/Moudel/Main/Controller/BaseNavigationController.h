@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LXBaseNavigationController : UINavigationController
+@interface BaseNavigationController : UINavigationController
 
 @end

@@ -16,11 +16,6 @@
     self.frame = frame;
 }
 
-- (CGSize)size
-{
-    return self.frame.size;
-}
-
 - (void)setWidth:(CGFloat)width
 {
     CGRect frame = self.frame;
@@ -63,6 +58,11 @@
     self.center = center;
 }
 
+- (CGSize)size
+{
+    return self.frame.size;
+}
+
 - (CGFloat)centerY
 {
     return self.center.y;
@@ -95,7 +95,7 @@
 /**
  *  撤销键盘
  */
-- (void)cancelKeyboard{
+- (void)dismissKeyboard {
     if (![self isExclusiveTouch]) {
         [self endEditing:YES];
     }

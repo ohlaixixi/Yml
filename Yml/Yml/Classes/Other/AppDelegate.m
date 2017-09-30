@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LXBaseTabBarController.h"
+#import "BaseTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,8 +16,8 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[LXBaseTabBarController alloc]init];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[BaseTabBarController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;
 }

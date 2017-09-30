@@ -6,18 +6,18 @@
 //  Copyright © 2017年 xi. All rights reserved.
 //
 
-#import "LXBaseTabBarController.h"
-#import "LXBaseNavigationController.h"
+#import "BaseTabBarController.h"
+#import "BaseNavigationController.h"
 #import "LXHomeController.h"
 #import "LXCategoryController.h"
 #import "LXCommunityController.h"
 #import "LXMyController.h"
 
-@interface LXBaseTabBarController ()
+@interface BaseTabBarController ()
 
 @end
 
-@implementation LXBaseTabBarController
+@implementation BaseTabBarController
 
 + (void)initialize {
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
@@ -50,7 +50,7 @@
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
-    LXBaseNavigationController *navController = [[LXBaseNavigationController alloc]initWithRootViewController:vc];
+    BaseNavigationController *navController = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self addChildViewController:navController];
 }
 @end
