@@ -1,5 +1,5 @@
 //
-//  UIView+Frame.h
+//  UIView+Extension.h
 //  Yml
 //
 //  Created by LX on 2017/9/27.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (Frame)
+@interface UIView (Extension)
 @property (nonatomic, assign) CGSize size;
 @property (nonatomic, assign) CGFloat width;
 @property (nonatomic, assign) CGFloat height;

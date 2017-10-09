@@ -27,6 +27,9 @@ LXSingleton_m(NetworkTool)
     if (params) {
         [outputParams addEntriesFromDictionary:params];
     }
+    if ([PublicTools getUserInfo]) {
+        [outputParams addEntriesFromDictionary:[PublicTools getUserInfo]];
+    }
     NSMutableDictionary *paramsToSign = [NSMutableDictionary dictionaryWithDictionary:outputParams];
     [paramsToSign setObject:SIGN_KEY forKey:@"app_key"];
     
@@ -52,7 +55,7 @@ LXSingleton_m(NetworkTool)
 //    }
 //}
 
-- (void)get:(NSString *)URLString withParameters:(id)parameters success:(void (^)(NSURLSessionDataTask * task, id responseObject))success failure:(void (^)(NSURLSessionDataTask * task, NSError * error))failure {
+- (void)GET:(NSString *)URLString withParameters:(id)parameters success:(void (^)(NSURLSessionDataTask * task, id responseObject))success failure:(void (^)(NSURLSessionDataTask * task, NSError * error))failure {
     [self.afnManager GET:URLString parameters:parameters progress:nil success:success failure:failure];
 }
 
@@ -61,8 +64,8 @@ LXSingleton_m(NetworkTool)
     NSDictionary *params = [self paramsSigned:parameters];
     MLog(@"params=%@",params);
     [self.afnManager POST:URLString parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
-        MLog(@"responseObject=%@",responseObject);
-        if ([responseObject[@"state"] intValue] != STATE_SUCCESS) {
+        MLog(@"data=%@",responseObject);
+        if ([responseObject[@"state"] intValue] == STATE_FAILURE) {
             return;
         }
         success(responseObject[@"data"]);
@@ -77,7 +80,6 @@ LXSingleton_m(NetworkTool)
     if (_afnManager == nil) {
         NSURL *baseURL = [NSURL URLWithString:BASE_URL];
         _afnManager = [[AFHTTPSessionManager alloc]initWithBaseURL:baseURL];
-        // 修改响应解析器能够接受的数据类型
         _afnManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
     }
     return _afnManager;

@@ -16,10 +16,8 @@
 		1615628E1EEE6A0500982E58 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1615628D1EEE6A0500982E58 /* BaseTabBarController.m */; };
 		161562A11EEE6B4500982E58 /* LXMyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161562A01EEE6B4500982E58 /* LXMyController.m */; };
 		161562A41EEE6B5E00982E58 /* LXHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161562A31EEE6B5E00982E58 /* LXHomeController.m */; };
-		161562A71EEE6B7500982E58 /* LXCommunityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161562A61EEE6B7500982E58 /* LXCommunityController.m */; };
-		161562AA1EEE6BF200982E58 /* LXCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161562A91EEE6BF200982E58 /* LXCategoryController.m */; };
 		161562AD1EEE6DBF00982E58 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161562AC1EEE6DBF00982E58 /* BaseNavigationController.m */; };
-		166A36F61F7B7A8700780CE8 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A36F51F7B7A8700780CE8 /* UIView+Frame.m */; };
+		166A36F61F7B7A8700780CE8 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A36F51F7B7A8700780CE8 /* UIView+Extension.m */; };
 		166A377E1F7C8E4100780CE8 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A377D1F7C8E4100780CE8 /* NetworkTool.m */; };
 		166A37961F7C94F900780CE8 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A37831F7C94F900780CE8 /* MJExtensionConst.m */; };
 		166A37971F7C94F900780CE8 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A37851F7C94F900780CE8 /* MJFoundation.m */; };
@@ -40,6 +38,9 @@
 		166A37B71F7C976600780CE8 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A37B61F7C976600780CE8 /* NSObject+Log.m */; };
 		166A37BA1F7CD27B00780CE8 /* PublicTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A37B91F7CD27B00780CE8 /* PublicTools.m */; };
 		166A38211F7F7DBC00780CE8 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A38201F7F7DBC00780CE8 /* NSString+Extension.m */; };
+		16A95A721F8B54B40059D457 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95A711F8B54B40059D457 /* BaseViewController.m */; };
+		16A95A751F8B7B960059D457 /* LXCommunityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95A741F8B7B960059D457 /* LXCommunityController.m */; };
+		16A95A7C1F8B7BD40059D457 /* LXCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95A791F8B7BD40059D457 /* LXCategoryController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,14 +80,10 @@
 		161562A01EEE6B4500982E58 /* LXMyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXMyController.m; sourceTree = "<group>"; };
 		161562A21EEE6B5E00982E58 /* LXHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHomeController.h; sourceTree = "<group>"; };
 		161562A31EEE6B5E00982E58 /* LXHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHomeController.m; sourceTree = "<group>"; };
-		161562A51EEE6B7500982E58 /* LXCommunityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCommunityController.h; sourceTree = "<group>"; };
-		161562A61EEE6B7500982E58 /* LXCommunityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCommunityController.m; sourceTree = "<group>"; };
-		161562A81EEE6BF200982E58 /* LXCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LXCategoryController.h; path = Yml/Classes/Moudel/Community/Controller/LXCategoryController.h; sourceTree = SOURCE_ROOT; };
-		161562A91EEE6BF200982E58 /* LXCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LXCategoryController.m; path = Yml/Classes/Moudel/Community/Controller/LXCategoryController.m; sourceTree = SOURCE_ROOT; };
 		161562AB1EEE6DBF00982E58 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		161562AC1EEE6DBF00982E58 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
-		166A36F41F7B7A8700780CE8 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		166A36F51F7B7A8700780CE8 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		166A36F41F7B7A8700780CE8 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		166A36F51F7B7A8700780CE8 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		166A36F71F7B7D6700780CE8 /* UtilsMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsMacros.h; sourceTree = "<group>"; };
 		166A377C1F7C8E4100780CE8 /* NetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTool.h; sourceTree = "<group>"; };
 		166A377D1F7C8E4100780CE8 /* NetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTool.m; sourceTree = "<group>"; };
@@ -132,6 +129,12 @@
 		166A37B91F7CD27B00780CE8 /* PublicTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicTools.m; sourceTree = "<group>"; };
 		166A381F1F7F7DBB00780CE8 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		166A38201F7F7DBC00780CE8 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		16A95A701F8B54B40059D457 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		16A95A711F8B54B40059D457 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		16A95A731F8B7B960059D457 /* LXCommunityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCommunityController.h; sourceTree = "<group>"; };
+		16A95A741F8B7B960059D457 /* LXCommunityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCommunityController.m; sourceTree = "<group>"; };
+		16A95A781F8B7BD40059D457 /* LXCategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCategoryController.h; sourceTree = "<group>"; };
+		16A95A791F8B7BD40059D457 /* LXCategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCategoryController.m; sourceTree = "<group>"; };
 		16D8EC091F7B4B5B00F39A57 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		16D8EC0B1F7B4C4000F39A57 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,8 +238,8 @@
 			children = (
 				166A37B51F7C976600780CE8 /* NSObject+Log.h */,
 				166A37B61F7C976600780CE8 /* NSObject+Log.m */,
-				166A36F41F7B7A8700780CE8 /* UIView+Frame.h */,
-				166A36F51F7B7A8700780CE8 /* UIView+Frame.m */,
+				166A36F41F7B7A8700780CE8 /* UIView+Extension.h */,
+				166A36F51F7B7A8700780CE8 /* UIView+Extension.m */,
 				166A381F1F7F7DBB00780CE8 /* NSString+Extension.h */,
 				166A38201F7F7DBC00780CE8 /* NSString+Extension.m */,
 			);
@@ -259,7 +262,7 @@
 				161562931EEE6AF000982E58 /* Home */,
 				1615628F1EEE6AF000982E58 /* Community */,
 				161562971EEE6AF000982E58 /* My */,
-				1615629B1EEE6AF000982E58 /* Category */,
+				16A95A761F8B7BD40059D457 /* Category */,
 			);
 			path = Moudel;
 			sourceTree = "<group>";
@@ -313,6 +316,8 @@
 				1615628D1EEE6A0500982E58 /* BaseTabBarController.m */,
 				161562AB1EEE6DBF00982E58 /* BaseNavigationController.h */,
 				161562AC1EEE6DBF00982E58 /* BaseNavigationController.m */,
+				16A95A701F8B54B40059D457 /* BaseViewController.h */,
+				16A95A711F8B54B40059D457 /* BaseViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -344,8 +349,8 @@
 		161562901EEE6AF000982E58 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				161562A51EEE6B7500982E58 /* LXCommunityController.h */,
-				161562A61EEE6B7500982E58 /* LXCommunityController.m */,
+				16A95A731F8B7B960059D457 /* LXCommunityController.h */,
+				16A95A741F8B7B960059D457 /* LXCommunityController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -430,40 +435,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1615629B1EEE6AF000982E58 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				1615629C1EEE6AF000982E58 /* Controller */,
-				1615629D1EEE6AF000982E58 /* Model */,
-				1615629E1EEE6AF000982E58 /* View */,
-			);
-			name = Category;
-			path = Products;
-			sourceTree = "<group>";
-		};
-		1615629C1EEE6AF000982E58 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				161562A81EEE6BF200982E58 /* LXCategoryController.h */,
-				161562A91EEE6BF200982E58 /* LXCategoryController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		1615629D1EEE6AF000982E58 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1615629E1EEE6AF000982E58 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		166A37801F7C94F900780CE8 /* MJExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +481,39 @@
 				166A37AD1F7C950900780CE8 /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		16A95A761F8B7BD40059D457 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				16A95A771F8B7BD40059D457 /* Controller */,
+				16A95A7A1F8B7BD40059D457 /* Model */,
+				16A95A7B1F8B7BD40059D457 /* View */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		16A95A771F8B7BD40059D457 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16A95A781F8B7BD40059D457 /* LXCategoryController.h */,
+				16A95A791F8B7BD40059D457 /* LXCategoryController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		16A95A7A1F8B7BD40059D457 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		16A95A7B1F8B7BD40059D457 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		16D8EC081F7B4B4C00F39A57 /* Macros */ = {
@@ -657,19 +661,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				161562861EEE68F200982E58 /* AppDelegate.m in Sources */,
+				16A95A721F8B54B40059D457 /* BaseViewController.m in Sources */,
 				166A379D1F7C94F900780CE8 /* NSObject+MJKeyValue.m in Sources */,
 				166A37B71F7C976600780CE8 /* NSObject+Log.m in Sources */,
 				166A37BA1F7CD27B00780CE8 /* PublicTools.m in Sources */,
 				166A377E1F7C8E4100780CE8 /* NetworkTool.m in Sources */,
 				166A37B01F7C950900780CE8 /* AFSecurityPolicy.m in Sources */,
-				161562A71EEE6B7500982E58 /* LXCommunityController.m in Sources */,
 				166A37AE1F7C950900780CE8 /* AFHTTPSessionManager.m in Sources */,
 				166A37961F7C94F900780CE8 /* MJExtensionConst.m in Sources */,
 				161562AD1EEE6DBF00982E58 /* BaseNavigationController.m in Sources */,
 				166A38211F7F7DBC00780CE8 /* NSString+Extension.m in Sources */,
+				16A95A7C1F8B7BD40059D457 /* LXCategoryController.m in Sources */,
 				166A379E1F7C94F900780CE8 /* NSObject+MJProperty.m in Sources */,
 				166A379B1F7C94F900780CE8 /* NSObject+MJClass.m in Sources */,
-				166A36F61F7B7A8700780CE8 /* UIView+Frame.m in Sources */,
+				166A36F61F7B7A8700780CE8 /* UIView+Extension.m in Sources */,
 				166A37991F7C94F900780CE8 /* MJPropertyKey.m in Sources */,
 				166A37971F7C94F900780CE8 /* MJFoundation.m in Sources */,
 				166A379A1F7C94F900780CE8 /* MJPropertyType.m in Sources */,
@@ -681,8 +686,8 @@
 				166A37AF1F7C950900780CE8 /* AFNetworkReachabilityManager.m in Sources */,
 				161562A41EEE6B5E00982E58 /* LXHomeController.m in Sources */,
 				166A379C1F7C94F900780CE8 /* NSObject+MJCoding.m in Sources */,
+				16A95A751F8B7B960059D457 /* LXCommunityController.m in Sources */,
 				166A379F1F7C94F900780CE8 /* NSString+MJExtension.m in Sources */,
-				161562AA1EEE6BF200982E58 /* LXCategoryController.m in Sources */,
 				161562481EEE66E600982E58 /* main.m in Sources */,
 				1615628E1EEE6A0500982E58 /* BaseTabBarController.m in Sources */,
 			);

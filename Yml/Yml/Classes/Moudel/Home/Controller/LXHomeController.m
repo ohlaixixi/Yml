@@ -8,6 +8,8 @@
 
 #import "LXHomeController.h"
 
+#define kUserInfo @"kUserInfo"
+
 @interface LXHomeController ()
 
 @end
@@ -17,40 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = GLOBAL_BACKGROUND_COLOR;
+    self.title = @"测试";
     
     NSDictionary *params = @{@"uid":@"",
-                             @"token":@"11"};
-    
-//    [[NetworkTool sharedNetworkTool] post:@"?method=msg.readNum"
-//                           parameters:nil
-//                            success:^(NSURLSessionDataTask *task, id responseObject) {
-//                                
-//                                MLog(@"%@",responseObject);
-//
-//                            } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//                                MLog(@"==>%@",error);
-//    }];
-    [[NetworkTool sharedNetworkTool] post:@"?method=msg.readNum" parameters:params success:^(id responseObject) {
-        
+                             @"token":@""};
+    [PublicTools setData:params toUserDefaultsKey:kUserInfo];
+    [[NetworkTool sharedNetworkTool] POST:@"?method=msg.readNum" parameters:nil success:^(id data) {
+        MLog(@"%@",data);
     } failure:^(NSError *error) {
-        
+        MLog(@"==>%@",error);
     }];
-    
 }
 
-
--(NSString*)DataTOjsonString:(id)object
-{
-    NSString *jsonString = nil;
-    NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                         error:&error];
-    if (! jsonData) {
-        NSLog(@"Got an error: %@", error);
-    } else {
-        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    }
-    return jsonString;
-}
 @end

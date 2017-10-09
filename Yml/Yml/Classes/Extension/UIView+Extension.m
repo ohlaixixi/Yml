@@ -1,14 +1,14 @@
 //
-//  UIView+Frame.m
+//  UIView+Extension.m
 //  Yml
 //
 //  Created by LX on 2017/9/27.
 //  Copyright © 2017年 xi. All rights reserved.
 //
 
-#import "UIView+Frame.h"
+#import "UIView+Extension.h"
 
-@implementation UIView (Frame)
+@implementation UIView (Extension)
 - (void)setSize:(CGSize)size
 {
     CGRect frame = self.frame;
@@ -92,6 +92,7 @@
 {
     return self.frame.origin.y;
 }
+
 /**
  *  撤销键盘
  */

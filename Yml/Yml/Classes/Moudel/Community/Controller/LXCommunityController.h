@@ -2,12 +2,12 @@
 //  LXCommunityController.h
 //  Yml
 //
-//  Created by 希 on 2017/6/12.
+//  Created by LX on 2017/10/9.
 //  Copyright © 2017年 xi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface LXCommunityController : UIViewController
+@interface LXCommunityController : BaseViewController
 
 @end

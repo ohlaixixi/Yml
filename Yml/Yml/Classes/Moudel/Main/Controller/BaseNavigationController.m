@@ -15,12 +15,11 @@
 @implementation BaseNavigationController
 
 + (void)initialize{
-    // 导航栏分隔线
     UINavigationBar *bar = [UINavigationBar appearance];
     [bar setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     [bar setShadowImage:[[UIImage alloc] init]];
     bar.translucent = NO;
-    [bar setTitleTextAttributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:18],NSForegroundColorAttributeName:[UIColor blackColor]}];
+    [bar setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor blackColor]}];
 }
 
 - (void)viewDidLoad {

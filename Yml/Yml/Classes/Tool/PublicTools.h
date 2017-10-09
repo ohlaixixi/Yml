@@ -10,10 +10,12 @@
 
 @interface PublicTools : NSObject
 
-+ (BOOL)checkPhone;
-+ (BOOL)checkNetwork;
-
 + (void)setData:(id)data toUserDefaultsKey:(NSString *)key;
 + (id)getDataFromUserDefaultsWithKey:(NSString *)key;
++ (id)getUserInfo;
+
++ (BOOL)checkNetwork;
++ (BOOL)checkPhone:(NSString *)phone;
++ (BOOL)checkEmoji:(NSString *)string;
 
 @end
