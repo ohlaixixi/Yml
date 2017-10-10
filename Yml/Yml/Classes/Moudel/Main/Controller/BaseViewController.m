@@ -7,6 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import "BaseView.h"
+#import "LXNetworkErrorView.h"
 
 @interface BaseViewController ()
 
@@ -15,15 +17,12 @@
 @implementation BaseViewController
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
+//    self.view = [[LXNetworkErrorView alloc] initWithFrame:self.view.frame];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-
 
 @end
