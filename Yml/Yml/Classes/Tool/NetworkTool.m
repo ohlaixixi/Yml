@@ -62,15 +62,35 @@ LXSingleton_m(NetworkTool)
 - (void)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(id data))success failure:(void (^)(NSError * error))failure {
     MLog(@"%@%@",BASE_URL,URLString);
     NSDictionary *params = [self paramsSigned:parameters];
-    MLog(@"params=%@",params);
     [self.afnManager POST:URLString parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
-        MLog(@"data=%@",responseObject);
         if ([responseObject[@"state"] intValue] == STATE_FAILURE) {
             return;
         }
         success(responseObject[@"data"]);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         MLog(@"error=%@",error);
+    }];
+}
+
++ (BOOL)checkNetwork {
+    AFNetworkReachabilityManager *networkManager = [AFNetworkReachabilityManager sharedManager];
+    return networkManager.reachable;
+}
+
++ (void)networkStateChange {
+    AFNetworkReachabilityManager *networkManager = [AFNetworkReachabilityManager sharedManager];
+    [networkManager startMonitoring];
+    [networkManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        BOOL networkStatus;
+        if(status == AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi) {
+            networkStatus = YES;
+        }
+        else {
+            networkStatus = NO;
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationNetworkError
+                                                            object:nil
+                                                          userInfo:@{@"networkStatus":@(networkStatus)}];
     }];
 }
 

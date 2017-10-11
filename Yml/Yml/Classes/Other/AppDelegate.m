@@ -19,6 +19,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[BaseTabBarController alloc] init];
     [self.window makeKeyAndVisible];
+    [NetworkTool networkStateChange];
     return YES;
 }
 

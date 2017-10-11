@@ -10,4 +10,6 @@
 
 @interface LXNetworkErrorView : UIView
 
+@property (nonatomic, assign) BOOL networkState;
+
 @end

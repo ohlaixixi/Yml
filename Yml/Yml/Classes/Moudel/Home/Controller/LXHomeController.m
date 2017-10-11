@@ -7,6 +7,7 @@
 //
 
 #import "LXHomeController.h"
+#import "LXCommunityController.h"
 
 #define kUserInfo @"kUserInfo"
 
@@ -18,17 +19,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = GLOBAL_BACKGROUND_COLOR;
+    
     self.title = @"测试";
+    self.showReloadBtn = YES;
     
     NSDictionary *params = @{@"uid":@"",
                              @"token":@""};
     [PublicTools setData:params toUserDefaultsKey:kUserInfo];
+    
     [[NetworkTool sharedNetworkTool] POST:@"?method=msg.readNum" parameters:nil success:^(id data) {
         MLog(@"%@",data);
     } failure:^(NSError *error) {
         MLog(@"==>%@",error);
     }];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(push)];
+    
+    UIView *testView = [[UIView alloc] initWithFrame:self.view.bounds];
+    testView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:testView];
+}
+
+- (void)push {
+    [self.navigationController pushViewController:[[LXCommunityController alloc] init] animated:YES];
 }
 
 @end

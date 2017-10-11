@@ -6,8 +6,8 @@
 //  Copyright © 2017年 xi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface LXCategoryController : UIViewController
+@interface LXCategoryController : BaseViewController
 
 @end

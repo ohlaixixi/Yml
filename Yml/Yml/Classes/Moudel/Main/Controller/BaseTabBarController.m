@@ -38,8 +38,7 @@
     
     [self setupChildViewController:[[LXHomeController alloc]init] withTitle:@"首页" withImage:@"home" withSelectedImage:@"homes"];
     LXCategoryController *cateStoryboard = [UIStoryboard storyboardWithName:@"LXCategory" bundle:nil].instantiateInitialViewController;
-    MLog(@"cateStoryboard=%@",cateStoryboard);
-    [self setupChildViewController:[[UIViewController alloc] init] withTitle:@"项目" withImage:@"category" withSelectedImage:@"categorys"];
+    [self setupChildViewController:cateStoryboard withTitle:@"项目" withImage:@"category" withSelectedImage:@"categorys"];
     [self setupChildViewController:[[LXCommunityController alloc]init] withTitle:@"美圈" withImage:@"community" withSelectedImage:@"communitys"];
     [self setupChildViewController:[[LXMyController alloc]init] withTitle:@"我的" withImage:@"my" withSelectedImage:@"mys"];
     
@@ -55,4 +54,5 @@
     BaseNavigationController *navController = [[BaseNavigationController alloc]initWithRootViewController:vc];
     [self addChildViewController:navController];
 }
+
 @end
