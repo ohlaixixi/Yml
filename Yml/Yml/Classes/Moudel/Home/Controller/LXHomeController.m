@@ -17,15 +17,19 @@
 
 @implementation LXHomeController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"测试";
-    self.showReloadBtn = YES;
-    
     NSDictionary *params = @{@"uid":@"",
                              @"token":@""};
     [PublicTools setData:params toUserDefaultsKey:kUserInfo];
+    
+    self.showReloadBtn = YES;
     
     [[NetworkTool sharedNetworkTool] POST:@"?method=msg.readNum" parameters:nil success:^(id data) {
         MLog(@"%@",data);
@@ -38,6 +42,15 @@
     UIView *testView = [[UIView alloc] initWithFrame:self.view.bounds];
     testView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:testView];
+}
+
+- (void)loadData {
+    MLog(@"loadData");
+    if ([NetworkTool checkNetwork]) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.hiddenNetworkErrorView = YES;
+        });
+    }
 }
 
 - (void)push {

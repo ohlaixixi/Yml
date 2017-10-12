@@ -18,6 +18,6 @@
 #define GLOBAL_BACKGROUND_COLOR RGB(248, 248, 248)
 
 
-#define kNotificationNetworkError @"notificationNetworkError"
+#define kNotificationNetworkStateChange @"notificationNetworkStateChange"
 
 #endif /* Macros_h */

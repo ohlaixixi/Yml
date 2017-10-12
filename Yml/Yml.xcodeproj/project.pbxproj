@@ -74,8 +74,10 @@
 		16A95AE81F8C6CFC0059D457 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95AD41F8C6CFC0059D457 /* UIView+MJExtension.m */; };
 		16A95AEA1F8C7B750059D457 /* LXCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A95AE91F8C7B750059D457 /* LXCategory.storyboard */; };
 		16A95AF01F8CAEE80059D457 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95AEF1F8CAEE80059D457 /* UILabel+Extension.m */; };
-		16A95AF91F8E20890059D457 /* LXNetworkErrorHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95AF61F8E20890059D457 /* LXNetworkErrorHeadView.m */; };
-		16A95AFA1F8E20890059D457 /* LXNetworkErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95AF81F8E20890059D457 /* LXNetworkErrorView.m */; };
+		16A95B031F8F54A70059D457 /* LXNetworkSolutionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95B011F8F54A70059D457 /* LXNetworkSolutionController.m */; };
+		16A95B041F8F54A70059D457 /* LXNetworkSolutionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A95B021F8F54A70059D457 /* LXNetworkSolutionController.xib */; };
+		16A95B091F8F55460059D457 /* LXNetworkErrorHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95B061F8F55460059D457 /* LXNetworkErrorHeadView.m */; };
+		16A95B0A1F8F55460059D457 /* LXNetworkErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95B081F8F55460059D457 /* LXNetworkErrorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,10 +241,13 @@
 		16A95AE91F8C7B750059D457 /* LXCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LXCategory.storyboard; sourceTree = "<group>"; };
 		16A95AEE1F8CAEE80059D457 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		16A95AEF1F8CAEE80059D457 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
-		16A95AF51F8E20890059D457 /* LXNetworkErrorHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXNetworkErrorHeadView.h; sourceTree = "<group>"; };
-		16A95AF61F8E20890059D457 /* LXNetworkErrorHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXNetworkErrorHeadView.m; sourceTree = "<group>"; };
-		16A95AF71F8E20890059D457 /* LXNetworkErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXNetworkErrorView.h; sourceTree = "<group>"; };
-		16A95AF81F8E20890059D457 /* LXNetworkErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXNetworkErrorView.m; sourceTree = "<group>"; };
+		16A95B001F8F54A70059D457 /* LXNetworkSolutionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXNetworkSolutionController.h; sourceTree = "<group>"; };
+		16A95B011F8F54A70059D457 /* LXNetworkSolutionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXNetworkSolutionController.m; sourceTree = "<group>"; };
+		16A95B021F8F54A70059D457 /* LXNetworkSolutionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LXNetworkSolutionController.xib; sourceTree = "<group>"; };
+		16A95B051F8F55460059D457 /* LXNetworkErrorHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXNetworkErrorHeadView.h; sourceTree = "<group>"; };
+		16A95B061F8F55460059D457 /* LXNetworkErrorHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXNetworkErrorHeadView.m; sourceTree = "<group>"; };
+		16A95B071F8F55460059D457 /* LXNetworkErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXNetworkErrorView.h; sourceTree = "<group>"; };
+		16A95B081F8F55460059D457 /* LXNetworkErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXNetworkErrorView.m; sourceTree = "<group>"; };
 		16D8EC091F7B4B5B00F39A57 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		16D8EC0B1F7B4C4000F39A57 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -370,6 +375,7 @@
 		1615627C1EEE68F200982E58 /* Moudel */ = {
 			isa = PBXGroup;
 			children = (
+				16A95AFB1F8F54530059D457 /* Public */,
 				1615627D1EEE68F200982E58 /* Main */,
 				161562931EEE6AF000982E58 /* Home */,
 				1615628F1EEE6AF000982E58 /* Community */,
@@ -444,7 +450,6 @@
 		1615628B1EEE693900982E58 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				16A95AF41F8E20890059D457 /* networkError */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -758,15 +763,50 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
-		16A95AF41F8E20890059D457 /* networkError */ = {
+		16A95AFB1F8F54530059D457 /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				16A95AF51F8E20890059D457 /* LXNetworkErrorHeadView.h */,
-				16A95AF61F8E20890059D457 /* LXNetworkErrorHeadView.m */,
-				16A95AF71F8E20890059D457 /* LXNetworkErrorView.h */,
-				16A95AF81F8E20890059D457 /* LXNetworkErrorView.m */,
+				16A95AFC1F8F54530059D457 /* NetworkError */,
 			);
-			path = networkError;
+			path = Public;
+			sourceTree = "<group>";
+		};
+		16A95AFC1F8F54530059D457 /* NetworkError */ = {
+			isa = PBXGroup;
+			children = (
+				16A95AFD1F8F54530059D457 /* Controller */,
+				16A95AFE1F8F54530059D457 /* Model */,
+				16A95AFF1F8F54530059D457 /* View */,
+			);
+			path = NetworkError;
+			sourceTree = "<group>";
+		};
+		16A95AFD1F8F54530059D457 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				16A95B001F8F54A70059D457 /* LXNetworkSolutionController.h */,
+				16A95B011F8F54A70059D457 /* LXNetworkSolutionController.m */,
+				16A95B021F8F54A70059D457 /* LXNetworkSolutionController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		16A95AFE1F8F54530059D457 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		16A95AFF1F8F54530059D457 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				16A95B051F8F55460059D457 /* LXNetworkErrorHeadView.h */,
+				16A95B061F8F55460059D457 /* LXNetworkErrorHeadView.m */,
+				16A95B071F8F55460059D457 /* LXNetworkErrorView.h */,
+				16A95B081F8F55460059D457 /* LXNetworkErrorView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		16D8EC081F7B4B4C00F39A57 /* Macros */ = {
@@ -887,6 +927,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A95B041F8F54A70059D457 /* LXNetworkSolutionController.xib in Resources */,
 				161562871EEE68F200982E58 /* Assets.xcassets in Resources */,
 				161562881EEE68F200982E58 /* LaunchScreen.storyboard in Resources */,
 				16A95AE31F8C6CFC0059D457 /* MJRefresh.bundle in Resources */,
@@ -925,6 +966,7 @@
 				16A95ADD1F8C6CFC0059D457 /* MJRefreshBackGifFooter.m in Sources */,
 				166A37B71F7C976600780CE8 /* NSObject+Log.m in Sources */,
 				16A95A9F1F8C59F90059D457 /* NSArray+MASAdditions.m in Sources */,
+				16A95B031F8F54A70059D457 /* LXNetworkSolutionController.m in Sources */,
 				16A95ADE1F8C6CFC0059D457 /* MJRefreshBackNormalFooter.m in Sources */,
 				166A37BA1F7CD27B00780CE8 /* PublicTools.m in Sources */,
 				166A377E1F7C8E4100780CE8 /* NetworkTool.m in Sources */,
@@ -946,10 +988,10 @@
 				16A95A9A1F8C59F90059D457 /* MASConstraint.m in Sources */,
 				16A95AE61F8C6CFC0059D457 /* UIScrollView+MJExtension.m in Sources */,
 				166A37991F7C94F900780CE8 /* MJPropertyKey.m in Sources */,
-				16A95AFA1F8E20890059D457 /* LXNetworkErrorView.m in Sources */,
 				16A95AD61F8C6CFC0059D457 /* MJRefreshBackFooter.m in Sources */,
 				16A95AE81F8C6CFC0059D457 /* UIView+MJExtension.m in Sources */,
 				166A37971F7C94F900780CE8 /* MJFoundation.m in Sources */,
+				16A95B0A1F8F55460059D457 /* LXNetworkErrorView.m in Sources */,
 				16A95AD51F8C6CFC0059D457 /* MJRefreshAutoFooter.m in Sources */,
 				16A95ADF1F8C6CFC0059D457 /* MJRefreshBackStateFooter.m in Sources */,
 				166A379A1F7C94F900780CE8 /* MJPropertyType.m in Sources */,
@@ -974,10 +1016,10 @@
 				16A95ADC1F8C6CFC0059D457 /* MJRefreshAutoStateFooter.m in Sources */,
 				16A95A751F8B7B960059D457 /* LXCommunityController.m in Sources */,
 				16A95AE71F8C6CFC0059D457 /* UIScrollView+MJRefresh.m in Sources */,
+				16A95B091F8F55460059D457 /* LXNetworkErrorHeadView.m in Sources */,
 				166A379F1F7C94F900780CE8 /* NSString+MJExtension.m in Sources */,
 				161562481EEE66E600982E58 /* main.m in Sources */,
 				1615628E1EEE6A0500982E58 /* BaseTabBarController.m in Sources */,
-				16A95AF91F8E20890059D457 /* LXNetworkErrorHeadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

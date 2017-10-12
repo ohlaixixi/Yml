@@ -88,7 +88,7 @@ LXSingleton_m(NetworkTool)
         else {
             networkStatus = NO;
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationNetworkError
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationNetworkStateChange
                                                             object:nil
                                                           userInfo:@{@"networkStatus":@(networkStatus)}];
     }];

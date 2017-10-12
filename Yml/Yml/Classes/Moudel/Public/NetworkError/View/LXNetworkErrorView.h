@@ -10,6 +10,9 @@
 
 @interface LXNetworkErrorView : UIView
 
-@property (nonatomic, assign) BOOL networkState;
+// 不可下拉刷新的视图显示加载按钮
+@property (nonatomic, assign) BOOL showReloadBtn;
+
+@property (nonatomic, copy) void (^reloadDataBlock)(void);
 
 @end

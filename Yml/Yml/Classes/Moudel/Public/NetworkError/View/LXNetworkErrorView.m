@@ -15,8 +15,6 @@
 @property (nonatomic, strong) UILabel *topLabel;
 @property (nonatomic, strong) UILabel *bottomLabel;
 @property (nonatomic, strong) UIButton *reloadBtn;
-//@property (nonatomic, strong) UIButton *headErrorBtn;
-//@property (nonatomic, strong) UIImageView *arrowView;
 
 @end
 
@@ -34,20 +32,16 @@
     self.backgroundColor = [UIColor clearColor];
     
     [self addSubview:self.containerView];
-//    [self addSubview:self.headErrorBtn];
     [self.containerView addSubview:self.errorImageView];
     [self.containerView addSubview:self.topLabel];
     [self.containerView addSubview:self.bottomLabel];
     [self.containerView addSubview:self.reloadBtn];
-//    [self.headErrorBtn addSubview:self.arrowView];
     
     _containerView.translatesAutoresizingMaskIntoConstraints = NO;
-//    _headErrorBtn.translatesAutoresizingMaskIntoConstraints = NO;
     _errorImageView.translatesAutoresizingMaskIntoConstraints = NO;
     _topLabel.translatesAutoresizingMaskIntoConstraints = NO;
     _bottomLabel.translatesAutoresizingMaskIntoConstraints = NO;
     _reloadBtn.translatesAutoresizingMaskIntoConstraints = NO;
-//    _arrowView.translatesAutoresizingMaskIntoConstraints = NO;
     
     [_containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.trailing.bottom.equalTo(self);
@@ -70,25 +64,21 @@
         make.width.equalTo(@103);
         make.height.equalTo(@34);
     }];
-//    [_headErrorBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.leading.trailing.equalTo(self);
-//        make.height.equalTo(@44);
-//    }];
-//    [_arrowView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.trailing.equalTo(_headErrorBtn).offset(-10);
-//        make.centerY.equalTo(_headErrorBtn);
-//    }];
 }
 
 - (void)reloadButtonDidClick {
-    MLog(@"reloadButtonDidClick");
+    self.reloadDataBlock();
 }
 
 #pragma mark - Setter/Getter
-//- (void)setNetworkState:(BOOL)networkState {
-//    _networkState = networkState;
-//    _headErrorBtn.hidden = networkState;
-//}
+
+- (void)setShowReloadBtn:(BOOL)showReloadBtn {
+    _showReloadBtn = showReloadBtn;
+    self.userInteractionEnabled = YES;
+    self.backgroundColor = GLOBAL_BACKGROUND_COLOR;
+    _reloadBtn.hidden = NO;
+    _bottomLabel.text = @"请检查您的网络";
+}
 
 - (UIView *)containerView {
     if (!_containerView) {
@@ -114,7 +104,7 @@
 
 - (UILabel *)bottomLabel {
     if (!_bottomLabel) {
-        _bottomLabel = [UILabel labelWithText:@"请检查您的网络" textColor:UIColorFromHex(0xc0c0c0) fontSize:13];
+        _bottomLabel = [UILabel labelWithText:@"请检查您的网络，下拉刷新" textColor:UIColorFromHex(0xc0c0c0) fontSize:13];
     }
     return _bottomLabel;
 }
@@ -129,33 +119,10 @@
         _reloadBtn.layer.borderColor = UIColorFromHex(0xe2e2e2).CGColor;
         _reloadBtn.layer.borderWidth = 0.5;
         _reloadBtn.layer.cornerRadius = 3;
+        _reloadBtn.hidden = YES;
         [_reloadBtn addTarget:self action:@selector(reloadButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _reloadBtn;
 }
 
-//- (UIButton *)headErrorBtn {
-//    if (!_headErrorBtn) {
-//        _headErrorBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//        _headErrorBtn.hidden = YES;
-//        _headErrorBtn.adjustsImageWhenHighlighted = NO;
-//        _headErrorBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-//        _headErrorBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-//        _headErrorBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 14, 0, 0);
-//        _headErrorBtn.backgroundColor = RGBA(0, 0, 0, 0.68);
-//        _headErrorBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-//        [_headErrorBtn setTitle:@"网络连接失败，请检查您的网络设置" forState:UIControlStateNormal];
-//        [_headErrorBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//        [_headErrorBtn setImage:[UIImage imageNamed:@"error_img"] forState:UIControlStateNormal];
-//        [_headErrorBtn addTarget:self action:@selector(headButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
-//    }
-//    return _headErrorBtn;
-//}
-//
-//- (UIImageView *)arrowView {
-//    if (!_arrowView) {
-//        _arrowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
-//    }
-//    return _arrowView;
-//}
 @end

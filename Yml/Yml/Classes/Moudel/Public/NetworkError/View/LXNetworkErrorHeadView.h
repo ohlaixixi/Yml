@@ -10,6 +10,6 @@
 
 @interface LXNetworkErrorHeadView : UIView
 
-@property (nonatomic, assign) BOOL networkState;
+@property (nonatomic, copy) void (^headErrorBtnClickBlock)(void);
 
 @end

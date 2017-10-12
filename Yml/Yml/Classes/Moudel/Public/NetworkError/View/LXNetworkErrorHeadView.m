@@ -42,20 +42,14 @@
 }
 
 - (void)headButtonDidClick {
-    MLog(@"headButtonDidClick");
+    self.headErrorBtnClickBlock();
 }
 
 #pragma mark - Setter/Getter
 
-- (void)setNetworkState:(BOOL)networkState {
-    _networkState = networkState;
-    _headErrorBtn.hidden = networkState;
-}
-
 - (UIButton *)headErrorBtn {
     if (!_headErrorBtn) {
         _headErrorBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _headErrorBtn.hidden = YES;
         _headErrorBtn.adjustsImageWhenHighlighted = NO;
         _headErrorBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         _headErrorBtn.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);

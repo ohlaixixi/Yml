@@ -10,7 +10,8 @@
 
 @interface BaseViewController : UIViewController
 
-//网络错误视图是否显示重新加载按钮
+//不可下拉刷新的视图显示加载按钮
 @property (nonatomic, assign) BOOL showReloadBtn;
 
+@property (nonatomic, assign) BOOL hiddenNetworkErrorView;
 @end
