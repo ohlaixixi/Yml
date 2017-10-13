@@ -14,7 +14,6 @@
 + (id)getDataFromUserDefaultsWithKey:(NSString *)key;
 + (id)getUserInfo;
 
-+ (BOOL)checkNetwork;
 + (BOOL)checkPhone:(NSString *)phone;
 + (BOOL)checkEmoji:(NSString *)string;
 

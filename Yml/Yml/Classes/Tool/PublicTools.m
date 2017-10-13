@@ -28,11 +28,7 @@
    return [self getDataFromUserDefaultsWithKey:kUserInfo];
 }
 
-#pragma mark - 检测手机 表情符号 网络状态
-
-+ (BOOL)checkNetwork {
-    return YES;
-}
+#pragma mark - 检测手机 表情符号
 
 + (BOOL)checkPhone:(NSString *)phone {
     NSString * MOBILE = @"^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$";

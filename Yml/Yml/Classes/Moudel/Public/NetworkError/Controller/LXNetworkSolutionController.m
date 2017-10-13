@@ -9,7 +9,6 @@
 #import "LXNetworkSolutionController.h"
 
 @interface LXNetworkSolutionController ()
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewHeightConstraint;
 
 @end
 
@@ -18,7 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"解决方案";
-    _scrollViewHeightConstraint.constant = SCREEN_WIDTH / 375 * 1237;
+    self.view.backgroundColor = GLOBAL_BACKGROUND_COLOR;
+    UIScrollView *containerView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    UIImageView *contentImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"network_solution"]];
+    contentImageView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH / 375 * 1237);
+    containerView.contentSize = contentImageView.size;
+    [containerView addSubview:contentImageView];
+    [self.view addSubview:containerView];
 }
 
 @end
