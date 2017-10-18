@@ -8,6 +8,7 @@
 
 #import "LXHomeController.h"
 #import "LXCommunityController.h"
+#import "LXAlertView.h"
 
 #define kUserInfo @"kUserInfo"
 
@@ -23,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"测试";
     NSDictionary *params = @{@"uid":@"",
                              @"token":@""};
@@ -39,9 +40,12 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(push)];
     
-    UIView *testView = [[UIView alloc] initWithFrame:self.view.bounds];
-    testView.backgroundColor = [UIColor blueColor];
-    [self.view addSubview:testView];
+//    UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 200, 200)];
+//    testView.backgroundColor = [UIColor redColor];
+//    UIView *test2 = [[UIView alloc]  initWithFrame:CGRectMake(0, 0, 300, 300)];
+//    test2.backgroundColor = [UIColor blueColor];
+//    [testView addSubview:test2];
+//    [self.view addSubview:testView];
 }
 
 - (void)loadData {
@@ -54,7 +58,20 @@
 }
 
 - (void)push {
-    [self.navigationController pushViewController:[[LXCommunityController alloc] init] animated:YES];
+//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"title" message:@"message" preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+//    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+//    [alertController addAction:cancelAction];
+//    [alertController addAction:okAction];
+//    [self presentViewController:alertController animated:YES completion:nil];
+
+//    [self.navigationController pushViewController:[[LXCommunityController alloc] init] animated:YES];
+    
+    
+    LXAlertView *alertView = [LXAlertView showAlertViewWithTitle:nil message:@"文本文本文文本文本文本文本文本文本文本文本文本文本本" buttonTitles:@[@"取消",@"确定"] handler:^(LXAlertView *alertView, NSInteger buttonIndex) {
+        MLog(@"%ld",buttonIndex);
+    }];
+    [alertView show];
 }
 
 @end
