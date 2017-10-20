@@ -9,6 +9,8 @@
 #import "LXHomeController.h"
 #import "LXCommunityController.h"
 #import "LXAlertView.h"
+#import "HUDTool.h"
+#import <ImageIO/ImageIO.h>
 
 #define kUserInfo @"kUserInfo"
 
@@ -24,13 +26,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.showReloadBtn = YES;
     self.title = @"测试";
     NSDictionary *params = @{@"uid":@"",
                              @"token":@""};
     [PublicTools setData:params toUserDefaultsKey:kUserInfo];
-    
-    self.showReloadBtn = YES;
     
     [[NetworkTool sharedNetworkTool] POST:@"?method=msg.readNum" parameters:nil success:^(id data) {
         MLog(@"%@",data);
@@ -38,23 +39,26 @@
         MLog(@"==>%@",error);
     }];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(push)];
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 100, 100, 100);
+    [button setTitle:@"点我" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     
-//    UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 200, 200)];
-//    testView.backgroundColor = [UIColor redColor];
-//    UIView *test2 = [[UIView alloc]  initWithFrame:CGRectMake(0, 0, 300, 300)];
-//    test2.backgroundColor = [UIColor blueColor];
-//    [testView addSubview:test2];
-//    [self.view addSubview:testView];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(push)];
 }
 
 - (void)loadData {
-    MLog(@"loadData");
     if ([NetworkTool checkNetwork]) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self.hiddenNetworkErrorView = YES;
         });
     }
+}
+
+- (void)buttonClick {
+    MLog(@"buttonClick");
 }
 
 - (void)push {
@@ -64,14 +68,18 @@
 //    [alertController addAction:cancelAction];
 //    [alertController addAction:okAction];
 //    [self presentViewController:alertController animated:YES completion:nil];
-
-//    [self.navigationController pushViewController:[[LXCommunityController alloc] init] animated:YES];
     
+//    LXAlertView *alertView = [LXAlertView alertViewWithTitle:nil message:@"文本文本文文本文本文本文本文本文本文本文本文本文本本" buttonTitles:@[@"取消",@"确定"] handler:^(LXAlertView *alertView, NSInteger buttonIndex) {
+//        if (buttonIndex == 1) {
+//            [self.navigationController pushViewController:[[LXCommunityController alloc] init] animated:YES];
+//        }
+//    }];
+//    [alertView show];
     
-    LXAlertView *alertView = [LXAlertView showAlertViewWithTitle:nil message:@"文本文本文文本文本文本文本文本文本文本文本文本文本本" buttonTitles:@[@"取消",@"确定"] handler:^(LXAlertView *alertView, NSInteger buttonIndex) {
-        MLog(@"%ld",buttonIndex);
-    }];
-    [alertView show];
+    [HUDTool showAnimaLoading:self.view];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [HUDTool hide];
+    });
 }
 
 @end

@@ -20,7 +20,7 @@ const static CGFloat kAlertViewCornerRadius          = 2;   // 圆角半径
 
 @implementation LXAlertView
 
-+ (instancetype)showAlertViewWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles handler:(void(^)(LXAlertView *alertView, NSInteger buttonIndex))handler {
++ (instancetype)alertViewWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles handler:(void(^)(LXAlertView *alertView, NSInteger buttonIndex))handler {
     LXAlertView *alertView = [[LXAlertView alloc] initWithTitle:title message:message buttonTitles:buttonTitles];
     alertView.buttonClickBlock = handler;
     return alertView;
@@ -125,9 +125,6 @@ const static CGFloat kAlertViewCornerRadius          = 2;   // 圆角半径
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [button setTag:i];
         [container addSubview:button];
-
-        [button setTitleColor:[UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:0.5f] forState:UIControlStateHighlighted];
-        
         if (i > 0) { //分隔线
             UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(i * buttonW, 0, 0.5, kAlertViewDefaultButtonHeight)];
             lineView.backgroundColor = RGB(229, 229, 229);
@@ -181,9 +178,6 @@ const static CGFloat kAlertViewCornerRadius          = 2;   // 圆角半径
                          _containerView.layer.opacity = 0.0f;
                      }
                      completion:^(BOOL finished) {
-                         for (UIView *v in [self subviews]) {
-                             [v removeFromSuperview];
-                         }
                          [self removeFromSuperview];
                      }
      ];

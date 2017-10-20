@@ -18,6 +18,9 @@
 		161562A41EEE6B5E00982E58 /* LXHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161562A31EEE6B5E00982E58 /* LXHomeController.m */; };
 		161562AD1EEE6DBF00982E58 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 161562AC1EEE6DBF00982E58 /* BaseNavigationController.m */; };
 		161D161E1F96F00100E3646F /* LXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 161D161D1F96F00100E3646F /* LXAlertView.m */; };
+		161D16221F98997100E3646F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 161D16211F98997100E3646F /* MBProgressHUD.m */; };
+		161D16261F98AF8700E3646F /* HUDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 161D16251F98AF8700E3646F /* HUDTool.m */; };
+		161D16481F99F7E400E3646F /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 161D16471F99F7E400E3646F /* loading.gif */; };
 		166A36F61F7B7A8700780CE8 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A36F51F7B7A8700780CE8 /* UIView+Extension.m */; };
 		166A377E1F7C8E4100780CE8 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A377D1F7C8E4100780CE8 /* NetworkTool.m */; };
 		166A37961F7C94F900780CE8 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A37831F7C94F900780CE8 /* MJExtensionConst.m */; };
@@ -123,6 +126,11 @@
 		161562AC1EEE6DBF00982E58 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		161D161C1F96F00100E3646F /* LXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXAlertView.h; sourceTree = "<group>"; };
 		161D161D1F96F00100E3646F /* LXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXAlertView.m; sourceTree = "<group>"; };
+		161D16201F98997100E3646F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		161D16211F98997100E3646F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		161D16241F98AF8700E3646F /* HUDTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDTool.h; sourceTree = "<group>"; };
+		161D16251F98AF8700E3646F /* HUDTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDTool.m; sourceTree = "<group>"; };
+		161D16471F99F7E400E3646F /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		166A36F41F7B7A8700780CE8 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		166A36F51F7B7A8700780CE8 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		166A36F71F7B7D6700780CE8 /* UtilsMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsMacros.h; sourceTree = "<group>"; };
@@ -371,6 +379,7 @@
 		1615627B1EEE68F200982E58 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				161D161F1F98997100E3646F /* MBProgressHUD */,
 				16A95AA61F8C6CFC0059D457 /* MJRefresh */,
 				16A95A7D1F8C59F90059D457 /* Masonry */,
 				166A37A01F7C950900780CE8 /* AFNetworking */,
@@ -421,6 +430,8 @@
 				166A37B91F7CD27B00780CE8 /* PublicTools.m */,
 				166A377C1F7C8E4100780CE8 /* NetworkTool.h */,
 				166A377D1F7C8E4100780CE8 /* NetworkTool.m */,
+				161D16241F98AF8700E3646F /* HUDTool.h */,
+				161D16251F98AF8700E3646F /* HUDTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -428,6 +439,7 @@
 		161562821EEE68F200982E58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				161D16471F99F7E400E3646F /* loading.gif */,
 				161562831EEE68F200982E58 /* Assets.xcassets */,
 				161562841EEE68F200982E58 /* LaunchScreen.storyboard */,
 			);
@@ -560,6 +572,22 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		161D161F1F98997100E3646F /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				161D16201F98997100E3646F /* MBProgressHUD.h */,
+				161D16211F98997100E3646F /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		161D16231F98AE5B00E3646F /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HUD;
 			sourceTree = "<group>";
 		};
 		166A37801F7C94F900780CE8 /* MJExtension */ = {
@@ -784,6 +812,7 @@
 		16A95AFB1F8F54530059D457 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				161D16231F98AE5B00E3646F /* HUD */,
 				168E88901F9444E100063A65 /* Alert */,
 				16A95B0B1F9053110059D457 /* Empty */,
 				16A95AFC1F8F54530059D457 /* NetworkError */,
@@ -957,6 +986,7 @@
 			files = (
 				161562871EEE68F200982E58 /* Assets.xcassets in Resources */,
 				161562881EEE68F200982E58 /* LaunchScreen.storyboard in Resources */,
+				161D16481F99F7E400E3646F /* loading.gif in Resources */,
 				16A95AE31F8C6CFC0059D457 /* MJRefresh.bundle in Resources */,
 				16A95A981F8C59F90059D457 /* Info.plist in Resources */,
 				16A95AEA1F8C7B750059D457 /* LXCategory.storyboard in Resources */,
@@ -996,6 +1026,7 @@
 				16A95B0E1F9062DD0059D457 /* BaseListViewController.m in Sources */,
 				16A95B031F8F54A70059D457 /* LXNetworkSolutionController.m in Sources */,
 				16A95ADE1F8C6CFC0059D457 /* MJRefreshBackNormalFooter.m in Sources */,
+				161D16221F98997100E3646F /* MBProgressHUD.m in Sources */,
 				166A37BA1F7CD27B00780CE8 /* PublicTools.m in Sources */,
 				166A377E1F7C8E4100780CE8 /* NetworkTool.m in Sources */,
 				166A37B01F7C950900780CE8 /* AFSecurityPolicy.m in Sources */,
@@ -1010,6 +1041,7 @@
 				16A95AD81F8C6CFC0059D457 /* MJRefreshFooter.m in Sources */,
 				16A95A7C1F8B7BD40059D457 /* LXCategoryController.m in Sources */,
 				166A379E1F7C94F900780CE8 /* NSObject+MJProperty.m in Sources */,
+				161D16261F98AF8700E3646F /* HUDTool.m in Sources */,
 				166A379B1F7C94F900780CE8 /* NSObject+MJClass.m in Sources */,
 				16A95A9D1F8C59F90059D457 /* MASViewAttribute.m in Sources */,
 				161D161E1F96F00100E3646F /* LXAlertView.m in Sources */,

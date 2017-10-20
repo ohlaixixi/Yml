@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class LXAlertView;
+
 typedef NS_ENUM(NSInteger, LXAlertButtonStyle) {
     LXAlertActionButtonCancel = 0,
     LXAlertActionButtonDefault,
 };
-
-@class LXAlertView;
 
 typedef void (^buttonClickBlock)(LXAlertView *alertView, NSInteger buttonIndex);
 
@@ -24,9 +24,10 @@ typedef void (^buttonClickBlock)(LXAlertView *alertView, NSInteger buttonIndex);
 @property (nonatomic, strong) NSArray *buttonTitles;
 @property (nonatomic, copy) buttonClickBlock buttonClickBlock;
 
-+ (instancetype)showAlertViewWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles handler:(void (^)(LXAlertView *alertView, NSInteger buttonIndex))handler;
++ (instancetype)alertViewWithTitle:(NSString *)title message:(NSString *)message buttonTitles:(NSArray *)buttonTitles handler:(void (^)(LXAlertView *alertView, NSInteger buttonIndex))handler;
 
 - (void)show;
+
 - (void)dismiss;
 
 @end
