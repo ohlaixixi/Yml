@@ -7,6 +7,7 @@
 //
 
 #import "LXCategoryController.h"
+#import "LXRefreshHeader.h"
 
 @interface LXCategoryController () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -17,14 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 375, 200)];
-    headView.backgroundColor = [UIColor redColor];
-    self.tableView.tableHeaderView = headView;
+    self.title = @"分类";
+    
+    self.tableView.backgroundColor = [UIColor lightGrayColor];
+    
+    self.tableView.mj_header = [LXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(load) toTableView:self.tableView];
+}
 
+- (void)load {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView.mj_header endRefreshing];
+    });
 }
 
 - (void)didReceiveMemoryWarning {

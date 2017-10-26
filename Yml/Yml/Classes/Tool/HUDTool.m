@@ -8,7 +8,6 @@
 
 #import "HUDTool.h"
 #import "MBProgressHUD.h"
-#import <ImageIO/ImageIO.h>
 
 #define HUDManager [HUDTool shareInstance].hud
 #define kDefaultTimeInterval 0.75
@@ -16,13 +15,15 @@
 typedef NS_ENUM(NSInteger,HUDMode){
     HUDModeOnlyText,              //文字
     HUDModeLoading,               //加载菊花
-    HUDModeCustomAnimation,       //自定义加载动画（序列帧实现）
-    HUDModeCustomerImage          //自定义图片
+    HUDModeCustomAnimation,       //自定义加载动画
+    HUDModeCustomerImage          //自定义图片+文字
 };
 
 @interface HUDTool ()
 
 @property (nonatomic, strong) MBProgressHUD *hud;
+
+@property (nonatomic, strong) NSMutableArray *animaImages;
 
 @end
 
@@ -51,25 +52,13 @@ typedef NS_ENUM(NSInteger,HUDMode){
 }
 
 + (void)showAnimaLoading:(UIView *)view {
-    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"loading" withExtension:@"gif"];
-    CGImageSourceRef gifSource = CGImageSourceCreateWithURL((CFURLRef)fileUrl, NULL);//将GIF图片转换成对应的图片源
-    size_t frameCout=CGImageSourceGetCount(gifSource);//获取其中图片源个数，即由多少帧图片组成
-    NSMutableArray* frames=[[NSMutableArray alloc] init];//定义数组存储拆分出来的图片
-    
-    for (size_t i=0; i<frameCout; i++) {
-        CGImageRef imageRef=CGImageSourceCreateImageAtIndex(gifSource, i, NULL);//从GIF图片中取出源图片
-        UIImage* imageName=[UIImage imageWithCGImage:imageRef];//将图片源转换成UIimageView能使用的图片源
-        [frames addObject:imageName];//将图片加入数组中
-        CGImageRelease(imageRef);
-        
-    }
-    
-    UIImageView *imgView = [[UIImageView alloc] init];
-    imgView.animationImages=frames;//将图片数组加入UIImageView动画数组中
-    imgView.animationDuration=1;//每次动画时长
-    [imgView startAnimating];//开启动画，此处没有调用播放次数接口，UIImageView默认播放次数为无限次，故这里不做处理
-    
-    [self show:@"111" inView:view mode:HUDModeCustomAnimation customView:imgView];
+    NSArray *imageArray = [HUDTool shareInstance].animaImages;
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.animationImages = imageArray;
+    [imageView setAnimationRepeatCount:0];
+    [imageView setAnimationDuration:(imageArray.count + 1) * 0.06];
+    [imageView startAnimating];
+    [self show:@"数据加载中" inView:view mode:HUDModeCustomAnimation customView:imageView];
 }
 
 + (void)hide {
@@ -84,15 +73,16 @@ typedef NS_ENUM(NSInteger,HUDMode){
         HUDManager = nil;
     }
     
-    HUDManager = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    HUDManager.bezelView.color = [UIColor blackColor];
-//    HUDManager.contentColor = [UIColor whiteColor];
-    [HUDManager setRemoveFromSuperViewOnHide:YES];
-    HUDManager.detailsLabel.font = [UIFont systemFontOfSize:14];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    [hud setRemoveFromSuperViewOnHide:YES];
+    hud.bezelView.color = [UIColor blackColor];
+    hud.contentColor = [UIColor whiteColor];
+    hud.label.font = [UIFont systemFontOfSize:14];
+    hud.label.text = message;
+    HUDManager = hud;
     
     switch (mode) {
         case HUDModeOnlyText:
-            HUDManager.label.text = message;
             HUDManager.mode = MBProgressHUDModeText;
             [HUDManager hideAnimated:YES afterDelay:kDefaultTimeInterval];
             break;
@@ -116,6 +106,16 @@ typedef NS_ENUM(NSInteger,HUDMode){
         default:
             break;
     }
+}
+
+- (NSMutableArray *)animaImages {
+    if (!_animaImages) {
+        _animaImages = [[NSMutableArray alloc] init];
+        for (int i = 1; i <= 30; i++) {
+            [_animaImages addObject:[UIImage imageNamed:[NSString stringWithFormat:@"loading%d",i]]];
+        }
+    }
+    return _animaImages;
 }
 
 @end

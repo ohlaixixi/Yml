@@ -66,47 +66,47 @@
 {
     [super setLastUpdatedTimeKey:lastUpdatedTimeKey];
     
-    // 如果label隐藏了，就不用再处理
-    if (self.lastUpdatedTimeLabel.hidden) return;
-    
-    NSDate *lastUpdatedTime = [[NSUserDefaults standardUserDefaults] objectForKey:lastUpdatedTimeKey];
-    
-    // 如果有block
-    if (self.lastUpdatedTimeText) {
-        self.lastUpdatedTimeLabel.text = self.lastUpdatedTimeText(lastUpdatedTime);
-        return;
-    }
-    
-    if (lastUpdatedTime) {
-        // 1.获得年月日
-        NSCalendar *calendar = [self currentCalendar];
-        NSUInteger unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay |NSCalendarUnitHour |NSCalendarUnitMinute;
-        NSDateComponents *cmp1 = [calendar components:unitFlags fromDate:lastUpdatedTime];
-        NSDateComponents *cmp2 = [calendar components:unitFlags fromDate:[NSDate date]];
-        
-        // 2.格式化日期
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        BOOL isToday = NO;
-        if ([cmp1 day] == [cmp2 day]) { // 今天
-            formatter.dateFormat = @" HH:mm";
-            isToday = YES;
-        } else if ([cmp1 year] == [cmp2 year]) { // 今年
-            formatter.dateFormat = @"MM-dd HH:mm";
-        } else {
-            formatter.dateFormat = @"yyyy-MM-dd HH:mm";
-        }
-        NSString *time = [formatter stringFromDate:lastUpdatedTime];
-        
-        // 3.显示日期
-        self.lastUpdatedTimeLabel.text = [NSString stringWithFormat:@"%@%@%@",
-                                          [NSBundle mj_localizedStringForKey:MJRefreshHeaderLastTimeText],
-                                          isToday ? [NSBundle mj_localizedStringForKey:MJRefreshHeaderDateTodayText] : @"",
-                                          time];
-    } else {
-        self.lastUpdatedTimeLabel.text = [NSString stringWithFormat:@"%@%@",
-                                          [NSBundle mj_localizedStringForKey:MJRefreshHeaderLastTimeText],
-                                          [NSBundle mj_localizedStringForKey:MJRefreshHeaderNoneLastDateText]];
-    }
+//    // 如果label隐藏了，就不用再处理
+//    if (self.lastUpdatedTimeLabel.hidden) return;
+//    
+//    NSDate *lastUpdatedTime = [[NSUserDefaults standardUserDefaults] objectForKey:lastUpdatedTimeKey];
+//    
+//    // 如果有block
+//    if (self.lastUpdatedTimeText) {
+//        self.lastUpdatedTimeLabel.text = self.lastUpdatedTimeText(lastUpdatedTime);
+//        return;
+//    }
+//    
+//    if (lastUpdatedTime) {
+//        // 1.获得年月日
+//        NSCalendar *calendar = [self currentCalendar];
+//        NSUInteger unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay |NSCalendarUnitHour |NSCalendarUnitMinute;
+//        NSDateComponents *cmp1 = [calendar components:unitFlags fromDate:lastUpdatedTime];
+//        NSDateComponents *cmp2 = [calendar components:unitFlags fromDate:[NSDate date]];
+//        
+//        // 2.格式化日期
+//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//        BOOL isToday = NO;
+//        if ([cmp1 day] == [cmp2 day]) { // 今天
+//            formatter.dateFormat = @" HH:mm";
+//            isToday = YES;
+//        } else if ([cmp1 year] == [cmp2 year]) { // 今年
+//            formatter.dateFormat = @"MM-dd HH:mm";
+//        } else {
+//            formatter.dateFormat = @"yyyy-MM-dd HH:mm";
+//        }
+//        NSString *time = [formatter stringFromDate:lastUpdatedTime];
+//        
+//        // 3.显示日期
+//        self.lastUpdatedTimeLabel.text = [NSString stringWithFormat:@"%@%@%@",
+//                                          [NSBundle mj_localizedStringForKey:MJRefreshHeaderLastTimeText],
+//                                          isToday ? [NSBundle mj_localizedStringForKey:MJRefreshHeaderDateTodayText] : @"",
+//                                          time];
+//    } else {
+//        self.lastUpdatedTimeLabel.text = [NSString stringWithFormat:@"%@%@",
+//                                          [NSBundle mj_localizedStringForKey:MJRefreshHeaderLastTimeText],
+//                                          [NSBundle mj_localizedStringForKey:MJRefreshHeaderNoneLastDateText]];
+//    }
 }
 
 #pragma mark - 覆盖父类的方法
@@ -115,12 +115,12 @@
     [super prepare];
     
     // 初始化间距
-    self.labelLeftInset = MJRefreshLabelLeftInset;
+//    self.labelLeftInset = MJRefreshLabelLeftInset;
     
-    // 初始化文字
-    [self setTitle:[NSBundle mj_localizedStringForKey:MJRefreshHeaderIdleText] forState:MJRefreshStateIdle];
-    [self setTitle:[NSBundle mj_localizedStringForKey:MJRefreshHeaderPullingText] forState:MJRefreshStatePulling];
-    [self setTitle:[NSBundle mj_localizedStringForKey:MJRefreshHeaderRefreshingText] forState:MJRefreshStateRefreshing];
+//    // 初始化文字
+//    [self setTitle:[NSBundle mj_localizedStringForKey:MJRefreshHeaderIdleText] forState:MJRefreshStateIdle];
+//    [self setTitle:[NSBundle mj_localizedStringForKey:MJRefreshHeaderPullingText] forState:MJRefreshStatePulling];
+//    [self setTitle:[NSBundle mj_localizedStringForKey:MJRefreshHeaderRefreshingText] forState:MJRefreshStateRefreshing];
 }
 
 - (void)placeSubviews

@@ -41,7 +41,7 @@
     
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 100, 100, 100);
-    [button setTitle:@"点我" forState:UIControlStateNormal];
+    [button setTitle:@"测试" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
@@ -58,7 +58,7 @@
 }
 
 - (void)buttonClick {
-    MLog(@"buttonClick");
+    [HUDTool showMessage:@"弹弹弹弹弹" toView:self.view];
 }
 
 - (void)push {
@@ -69,7 +69,7 @@
 //    [alertController addAction:okAction];
 //    [self presentViewController:alertController animated:YES completion:nil];
     
-//    LXAlertView *alertView = [LXAlertView alertViewWithTitle:nil message:@"文本文本文文本文本文本文本文本文本文本文本文本文本本" buttonTitles:@[@"取消",@"确定"] handler:^(LXAlertView *alertView, NSInteger buttonIndex) {
+//    LXAlertView *alertView = [LXAlertView alertViewWithTitle:nil message:@"文本" buttonTitles:@[@"取消",@"确定"] handler:^(LXAlertView *alertView, NSInteger buttonIndex) {
 //        if (buttonIndex == 1) {
 //            [self.navigationController pushViewController:[[LXCommunityController alloc] init] animated:YES];
 //        }

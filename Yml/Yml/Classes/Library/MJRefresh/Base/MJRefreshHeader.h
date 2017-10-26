@@ -15,6 +15,8 @@
 /** 创建header */
 + (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
 
++ (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action toTableView:(UITableView *)tableView;
+
 /** 这个key用来存储上一次下拉刷新成功的时间 */
 @property (copy, nonatomic) NSString *lastUpdatedTimeKey;
 /** 上一次下拉刷新成功的时间 */

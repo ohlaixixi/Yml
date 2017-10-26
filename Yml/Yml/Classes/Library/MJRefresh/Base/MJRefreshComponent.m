@@ -131,6 +131,13 @@
     self.refreshingAction = action;
 }
 
+- (void)setRefreshingTarget:(id)target refreshingAction:(SEL)action tableView:(UITableView *)tableView
+{
+    self.refreshingTarget = target;
+    self.refreshingAction = action;
+    self.tableView = tableView;
+}
+
 - (void)setState:(MJRefreshState)state
 {
     _state = state;

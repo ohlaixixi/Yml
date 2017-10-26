@@ -28,6 +28,12 @@
     return cmp;
 }
 
++ (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action toTableView:(UITableView *)tableView {
+    MJRefreshHeader *cmp = [[self alloc] init];
+    [cmp setRefreshingTarget:target refreshingAction:action tableView:tableView];
+    return cmp;
+}
+
 #pragma mark - 覆盖父类的方法
 - (void)prepare
 {
@@ -51,7 +57,7 @@
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change
 {
     [super scrollViewContentOffsetDidChange:change];
-    
+        
     // 在刷新的refreshing状态
     if (self.state == MJRefreshStateRefreshing) {
         if (self.window == nil) return;

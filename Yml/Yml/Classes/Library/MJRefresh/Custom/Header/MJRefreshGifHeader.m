@@ -8,61 +8,73 @@
 
 #import "MJRefreshGifHeader.h"
 
+const static CGFloat GIFRefreshHeaderHeight = 115;
+
 @interface MJRefreshGifHeader()
-{
-    __unsafe_unretained UIImageView *_gifView;
-}
+
+@property (nonatomic, weak) UIImageView *gifView;
 /** 所有状态对应的动画图片 */
 @property (strong, nonatomic) NSMutableDictionary *stateImages;
 /** 所有状态对应的动画时间 */
 @property (strong, nonatomic) NSMutableDictionary *stateDurations;
+
+@property (nonatomic, strong) UIView *containerView;
 @end
+
 
 @implementation MJRefreshGifHeader
 #pragma mark - 懒加载
+
+- (UIView *)containerView {
+    if (!_containerView) {
+        _containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, GIFRefreshHeaderHeight)];
+    }
+    return _containerView;
+}
+
 - (UIImageView *)gifView
 {
-    if (!_gifView) { 
-        UIImageView *gifView = [[UIImageView alloc] init]; 
-        [self addSubview:_gifView = gifView]; 
-    } 
-    return _gifView; 
+    if (!_gifView) {
+        UIImageView *imageView = [[UIImageView alloc] init];
+        [self.containerView addSubview:_gifView = imageView];
+    }
+    return _gifView;
 }
 
-- (NSMutableDictionary *)stateImages 
-{ 
-    if (!_stateImages) { 
-        self.stateImages = [NSMutableDictionary dictionary]; 
-    } 
-    return _stateImages; 
+- (NSMutableDictionary *)stateImages
+{
+    if (!_stateImages) {
+        self.stateImages = [NSMutableDictionary dictionary];
+    }
+    return _stateImages;
 }
 
-- (NSMutableDictionary *)stateDurations 
-{ 
-    if (!_stateDurations) { 
-        self.stateDurations = [NSMutableDictionary dictionary]; 
-    } 
-    return _stateDurations; 
+- (NSMutableDictionary *)stateDurations
+{
+    if (!_stateDurations) {
+        self.stateDurations = [NSMutableDictionary dictionary];
+    }
+    return _stateDurations;
 }
 
 #pragma mark - 公共方法
-- (void)setImages:(NSArray *)images duration:(NSTimeInterval)duration forState:(MJRefreshState)state 
-{ 
-    if (images == nil) return; 
+- (void)setImages:(NSArray *)images duration:(NSTimeInterval)duration forState:(MJRefreshState)state
+{
+    if (images == nil) return;
     
-    self.stateImages[@(state)] = images; 
-    self.stateDurations[@(state)] = @(duration); 
+    self.stateImages[@(state)] = images;
+    self.stateDurations[@(state)] = @(duration);
     
-    /* 根据图片设置控件的高度 */ 
-    UIImage *image = [images firstObject]; 
-    if (image.size.height > self.mj_h) { 
-        self.mj_h = image.size.height; 
-    } 
+    /* 根据图片设置控件的高度 */
+//    UIImage *image = [images firstObject];
+//    if (image.size.height > self.mj_h) {
+//        self.mj_h = image.size.height;
+//    }
 }
 
-- (void)setImages:(NSArray *)images forState:(MJRefreshState)state 
-{ 
-    [self setImages:images duration:images.count * 0.1 forState:state]; 
+- (void)setImages:(NSArray *)images forState:(MJRefreshState)state
+{
+    [self setImages:images duration:images.count * 0.1 forState:state];
 }
 
 #pragma mark - 实现父类的方法
@@ -70,8 +82,8 @@
 {
     [super prepare];
     
-    // 初始化间距
-    self.labelLeftInset = 20;
+    self.mj_h = GIFRefreshHeaderHeight;
+    
 }
 
 - (void)setPullingPercent:(CGFloat)pullingPercent
@@ -91,22 +103,27 @@
 {
     [super placeSubviews];
     
+    UIView *backgroundView = [[UIView alloc] init];
+    [backgroundView addSubview:self.containerView];
+    self.tableView.backgroundView = backgroundView;
+    
     if (self.gifView.constraints.count) return;
     
-    self.gifView.frame = self.bounds;
-    if (self.stateLabel.hidden && self.lastUpdatedTimeLabel.hidden) {
-        self.gifView.contentMode = UIViewContentModeCenter;
-    } else {
-        self.gifView.contentMode = UIViewContentModeRight;
-        
-        CGFloat stateWidth = self.stateLabel.mj_textWith;
-        CGFloat timeWidth = 0.0;
-        if (!self.lastUpdatedTimeLabel.hidden) {
-            timeWidth = self.lastUpdatedTimeLabel.mj_textWith;
-        }
-        CGFloat textWidth = MAX(stateWidth, timeWidth);
-        self.gifView.mj_w = self.mj_w * 0.5 - textWidth * 0.5 - self.labelLeftInset;
-    }
+    self.gifView.frame = CGRectMake(0, 20, self.containerView.mj_w, 75);
+    self.gifView.contentMode = UIViewContentModeCenter;
+//    if (self.stateLabel.hidden && self.lastUpdatedTimeLabel.hidden) {
+//        self.gifView.contentMode = UIViewContentModeCenter;
+//    } else {
+//        self.gifView.contentMode = UIViewContentModeRight;
+//        
+//        CGFloat stateWidth = self.stateLabel.mj_textWith;
+//        CGFloat timeWidth = 0.0;
+//        if (!self.lastUpdatedTimeLabel.hidden) {
+//            timeWidth = self.lastUpdatedTimeLabel.mj_textWith;
+//        }
+//        CGFloat textWidth = MAX(stateWidth, timeWidth);
+//        self.gifView.mj_w = self.mj_w * 0.5 - textWidth * 0.5 - self.labelLeftInset;
+//    }
 }
 
 - (void)setState:(MJRefreshState)state

@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 小码哥. All rights reserved.
 //
 
-#import "MJRefreshStateHeader.h"
+#import "MJRefreshHeader.h"
 
-@interface MJRefreshGifHeader : MJRefreshStateHeader
+@interface MJRefreshGifHeader : MJRefreshHeader
 @property (weak, nonatomic, readonly) UIImageView *gifView;
 
 /** 设置state状态下的动画图片images 动画持续时间duration*/

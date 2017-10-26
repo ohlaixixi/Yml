@@ -49,6 +49,8 @@ typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)();
 /** 设置回调对象和回调方法 */
 - (void)setRefreshingTarget:(id)target refreshingAction:(SEL)action;
 
+- (void)setRefreshingTarget:(id)target refreshingAction:(SEL)action tableView:(UITableView *)tableView;
+
 /** 回调对象 */
 @property (weak, nonatomic) id refreshingTarget;
 /** 回调方法 */
@@ -78,6 +80,8 @@ typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)();
 @property (assign, nonatomic, readonly) UIEdgeInsets scrollViewOriginalInset;
 /** 父控件 */
 @property (weak, nonatomic, readonly) UIScrollView *scrollView;
+
+@property (nonatomic, weak) UITableView *tableView;
 
 #pragma mark - 交给子类们去实现
 /** 初始化 */
