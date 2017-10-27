@@ -23,7 +23,7 @@
     
     self.title = @"分类";
     
-    self.tableView.backgroundColor = [UIColor lightGrayColor];
+    self.tableView.backgroundColor = GLOBAL_BACKGROUND_COLOR;
     
     self.tableView.mj_header = [LXRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(load) toTableView:self.tableView];
 }
