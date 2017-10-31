@@ -4,15 +4,10 @@
 //
 //  Created by 希 on 16/6/28.
 //  Copyright © 2016年 xi. All rights reserved.
-//  网络工具
+//  
 
 #import <Foundation/Foundation.h>
 #import "LXSingleton.h"
-
-typedef enum {
-    Get,
-    Post
-} RequestMethod;
 
 @interface NetworkTool : NSObject
 LXSingleton_h(NetworkTool);

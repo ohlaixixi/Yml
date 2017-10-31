@@ -47,13 +47,6 @@ LXSingleton_m(NetworkTool)
     return outputParams;
 }
 
-//- (void)requestMethod:(RequestMethod)method withURLString:(NSString *)URLString withParameters:(id)parameters success:(void (^)(NSURLSessionDataTask * task, id responseObject))success failure:(void (^)(NSURLSessionDataTask * task, NSError * error))failure{
-//    if (method == Get) {
-//        [self.afnManager GET:URLString parameters:parameters progress:nil success:success failure:failure];
-//    }else {
-//        [self.afnManager POST:URLString parameters:parameters progress:nil success:success failure:failure];
-//    }
-//}
 
 - (void)GET:(NSString *)URLString withParameters:(id)parameters success:(void (^)(NSURLSessionDataTask * task, id responseObject))success failure:(void (^)(NSURLSessionDataTask * task, NSError * error))failure {
     [self.afnManager GET:URLString parameters:parameters progress:nil success:success failure:failure];
