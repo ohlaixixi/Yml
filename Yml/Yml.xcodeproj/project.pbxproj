@@ -23,6 +23,9 @@
 		162AF9911FA81383001FA72D /* LXNetworkErrorHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 162AF98C1FA81383001FA72D /* LXNetworkErrorHeadView.m */; };
 		162AF9921FA81383001FA72D /* LXNetworkErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 162AF98E1FA81383001FA72D /* LXNetworkErrorView.m */; };
 		162AF9931FA81383001FA72D /* LXNetworkSolutionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 162AF9901FA81383001FA72D /* LXNetworkSolutionController.m */; };
+		162AFCB21FBEC3D300304E01 /* LXProductDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 162AFCAF1FBEC3D300304E01 /* LXProductDetailController.m */; };
+		162AFCB51FBEDBF800304E01 /* LXProductDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 162AFCB41FBEDBF800304E01 /* LXProductDetailView.m */; };
+		162AFCB81FBEE24B00304E01 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 162AFCB71FBEE24B00304E01 /* UIButton+Extension.m */; };
 		166A36F61F7B7A8700780CE8 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A36F51F7B7A8700780CE8 /* UIView+Extension.m */; };
 		166A377E1F7C8E4100780CE8 /* NetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A377D1F7C8E4100780CE8 /* NetworkTool.m */; };
 		166A37961F7C94F900780CE8 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A37831F7C94F900780CE8 /* MJExtensionConst.m */; };
@@ -83,6 +86,7 @@
 		16A95AF01F8CAEE80059D457 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95AEF1F8CAEE80059D457 /* UILabel+Extension.m */; };
 		16A95B0E1F9062DD0059D457 /* BaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95B0D1F9062DD0059D457 /* BaseListViewController.m */; };
 		16A95B111F9063A00059D457 /* LXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95B101F9063A00059D457 /* LXEmptyView.m */; };
+		16D68EDF1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D68EDE1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +140,12 @@
 		162AF98E1FA81383001FA72D /* LXNetworkErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXNetworkErrorView.m; sourceTree = "<group>"; };
 		162AF98F1FA81383001FA72D /* LXNetworkSolutionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXNetworkSolutionController.h; sourceTree = "<group>"; };
 		162AF9901FA81383001FA72D /* LXNetworkSolutionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXNetworkSolutionController.m; sourceTree = "<group>"; };
+		162AFCAE1FBEC3D300304E01 /* LXProductDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXProductDetailController.h; sourceTree = "<group>"; };
+		162AFCAF1FBEC3D300304E01 /* LXProductDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXProductDetailController.m; sourceTree = "<group>"; };
+		162AFCB31FBEDBF800304E01 /* LXProductDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXProductDetailView.h; sourceTree = "<group>"; };
+		162AFCB41FBEDBF800304E01 /* LXProductDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXProductDetailView.m; sourceTree = "<group>"; };
+		162AFCB61FBEE24B00304E01 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		162AFCB71FBEE24B00304E01 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 		166A36F41F7B7A8700780CE8 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		166A36F51F7B7A8700780CE8 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		166A36F71F7B7D6700780CE8 /* UtilsMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsMacros.h; sourceTree = "<group>"; };
@@ -264,6 +274,8 @@
 		16A95B0D1F9062DD0059D457 /* BaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseListViewController.m; sourceTree = "<group>"; };
 		16A95B0F1F9063A00059D457 /* LXEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXEmptyView.h; sourceTree = "<group>"; };
 		16A95B101F9063A00059D457 /* LXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXEmptyView.m; sourceTree = "<group>"; };
+		16D68EDD1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KNSemiModal.h"; sourceTree = "<group>"; };
+		16D68EDE1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KNSemiModal.m"; sourceTree = "<group>"; };
 		16D8EC091F7B4B5B00F39A57 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		16D8EC0B1F7B4C4000F39A57 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -365,6 +377,8 @@
 		1615627A1EEE68F200982E58 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				162AFCB61FBEE24B00304E01 /* UIButton+Extension.h */,
+				162AFCB71FBEE24B00304E01 /* UIButton+Extension.m */,
 				166A37B51F7C976600780CE8 /* NSObject+Log.h */,
 				166A37B61F7C976600780CE8 /* NSObject+Log.m */,
 				166A36F41F7B7A8700780CE8 /* UIView+Extension.h */,
@@ -380,6 +394,7 @@
 		1615627B1EEE68F200982E58 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				16D68EDC1FBEEDED00F6FB5E /* SemiModal */,
 				168264D51FA1E4A400B279A8 /* MJRefresh */,
 				161D161F1F98997100E3646F /* MBProgressHUD */,
 				16A95A7D1F8C59F90059D457 /* Masonry */,
@@ -398,6 +413,7 @@
 				1615628F1EEE6AF000982E58 /* Community */,
 				161562971EEE6AF000982E58 /* My */,
 				16A95A761F8B7BD40059D457 /* Category */,
+				162AFCAB1FBEC3D300304E01 /* Products */,
 			);
 			path = Moudel;
 			sourceTree = "<group>";
@@ -594,6 +610,49 @@
 				162AF9901FA81383001FA72D /* LXNetworkSolutionController.m */,
 			);
 			path = NetworkError;
+			sourceTree = "<group>";
+		};
+		162AFCAB1FBEC3D300304E01 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				162AFCAC1FBEC3D300304E01 /* ProductDetail */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		162AFCAC1FBEC3D300304E01 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				162AFCAD1FBEC3D300304E01 /* Controller */,
+				162AFCB01FBEC3D300304E01 /* Model */,
+				162AFCB11FBEC3D300304E01 /* View */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		162AFCAD1FBEC3D300304E01 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				162AFCAE1FBEC3D300304E01 /* LXProductDetailController.h */,
+				162AFCAF1FBEC3D300304E01 /* LXProductDetailController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		162AFCB01FBEC3D300304E01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		162AFCB11FBEC3D300304E01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				162AFCB31FBEDBF800304E01 /* LXProductDetailView.h */,
+				162AFCB41FBEDBF800304E01 /* LXProductDetailView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		162CA8521F9DBF8B008595D3 /* Refresh */ = {
@@ -844,6 +903,15 @@
 			path = Empty;
 			sourceTree = "<group>";
 		};
+		16D68EDC1FBEEDED00F6FB5E /* SemiModal */ = {
+			isa = PBXGroup;
+			children = (
+				16D68EDD1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.h */,
+				16D68EDE1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.m */,
+			);
+			path = SemiModal;
+			sourceTree = "<group>";
+		};
 		16D8EC081F7B4B4C00F39A57 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
@@ -991,6 +1059,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				162AFCB21FBEC3D300304E01 /* LXProductDetailController.m in Sources */,
 				161562861EEE68F200982E58 /* AppDelegate.m in Sources */,
 				16A95A721F8B54B40059D457 /* BaseViewController.m in Sources */,
 				166A379D1F7C94F900780CE8 /* NSObject+MJKeyValue.m in Sources */,
@@ -1001,6 +1070,7 @@
 				16A95B0E1F9062DD0059D457 /* BaseListViewController.m in Sources */,
 				1682650D1FA1E4A400B279A8 /* MJRefreshBackNormalFooter.m in Sources */,
 				161D16221F98997100E3646F /* MBProgressHUD.m in Sources */,
+				16D68EDF1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.m in Sources */,
 				168265061FA1E4A400B279A8 /* MJRefreshComponent.m in Sources */,
 				162AF9911FA81383001FA72D /* LXNetworkErrorHeadView.m in Sources */,
 				166A37BA1F7CD27B00780CE8 /* PublicTools.m in Sources */,
@@ -1015,6 +1085,7 @@
 				16A95A991F8C59F90059D457 /* MASCompositeConstraint.m in Sources */,
 				166A37AE1F7C950900780CE8 /* AFHTTPSessionManager.m in Sources */,
 				166A37961F7C94F900780CE8 /* MJExtensionConst.m in Sources */,
+				162AFCB81FBEE24B00304E01 /* UIButton+Extension.m in Sources */,
 				168265131FA1E4A400B279A8 /* MJRefreshConst.m in Sources */,
 				161562AD1EEE6DBF00982E58 /* BaseNavigationController.m in Sources */,
 				166A38211F7F7DBC00780CE8 /* NSString+Extension.m in Sources */,
@@ -1053,6 +1124,7 @@
 				162AF9931FA81383001FA72D /* LXNetworkSolutionController.m in Sources */,
 				16A95A751F8B7B960059D457 /* LXCommunityController.m in Sources */,
 				1682650B1FA1E4A400B279A8 /* MJRefreshAutoStateFooter.m in Sources */,
+				162AFCB51FBEDBF800304E01 /* LXProductDetailView.m in Sources */,
 				1682650E1FA1E4A400B279A8 /* MJRefreshBackStateFooter.m in Sources */,
 				162AF9921FA81383001FA72D /* LXNetworkErrorView.m in Sources */,
 				168265111FA1E4A400B279A8 /* MJRefreshStateHeader.m in Sources */,
@@ -1216,6 +1288,7 @@
 					"$(PROJECT_DIR)/Yml/Classes/Library/Social/libWeiboSDK",
 					"$(PROJECT_DIR)/Yml/Classes/Library/Social/WeChatSDK_1.5",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yml360.Yml;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1242,6 +1315,7 @@
 					"$(PROJECT_DIR)/Yml/Classes/Library/Social/libWeiboSDK",
 					"$(PROJECT_DIR)/Yml/Classes/Library/Social/WeChatSDK_1.5",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yml360.Yml;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -11,6 +11,7 @@
 #import "LXAlertView.h"
 #import "HUDTool.h"
 #import <ImageIO/ImageIO.h>
+#import "LXProductDetailController.h"
 
 #define kUserInfo @"kUserInfo"
 
@@ -41,7 +42,7 @@
     
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 100, 100, 100);
-    [button setTitle:@"测试" forState:UIControlStateNormal];
+    [button setTitle:@"跳转商品详情页" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
@@ -58,7 +59,8 @@
 }
 
 - (void)buttonClick {
-    [HUDTool showMessage:@"弹弹弹弹弹" toView:self.view];
+    [self.navigationController pushViewController:[[LXProductDetailController alloc] init] animated:YES];
+//    [HUDTool showMessage:@"弹弹弹弹弹" toView:self.view];
 }
 
 - (void)push {
