@@ -20,7 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[BaseTabBarController alloc] init];
     [self.window makeKeyAndVisible];
-    
+
     // 监听网络状态变化
     [NetworkTool networkStateChange];
     return YES;

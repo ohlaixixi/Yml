@@ -86,7 +86,8 @@
 		16A95AF01F8CAEE80059D457 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95AEF1F8CAEE80059D457 /* UILabel+Extension.m */; };
 		16A95B0E1F9062DD0059D457 /* BaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95B0D1F9062DD0059D457 /* BaseListViewController.m */; };
 		16A95B111F9063A00059D457 /* LXEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A95B101F9063A00059D457 /* LXEmptyView.m */; };
-		16D68EDF1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D68EDE1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.m */; };
+		16CF79001FC2DE2D002A2737 /* LXGoodsSelectAttributesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16CF78FF1FC2DE2D002A2737 /* LXGoodsSelectAttributesView.m */; };
+		16D9C5211FC8104200B6C70D /* UIViewController+KNSemiModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D9C5201FC8104200B6C70D /* UIViewController+KNSemiModal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,10 +275,12 @@
 		16A95B0D1F9062DD0059D457 /* BaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseListViewController.m; sourceTree = "<group>"; };
 		16A95B0F1F9063A00059D457 /* LXEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXEmptyView.h; sourceTree = "<group>"; };
 		16A95B101F9063A00059D457 /* LXEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXEmptyView.m; sourceTree = "<group>"; };
-		16D68EDD1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KNSemiModal.h"; sourceTree = "<group>"; };
-		16D68EDE1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KNSemiModal.m"; sourceTree = "<group>"; };
+		16CF78FE1FC2DE2D002A2737 /* LXGoodsSelectAttributesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXGoodsSelectAttributesView.h; sourceTree = "<group>"; };
+		16CF78FF1FC2DE2D002A2737 /* LXGoodsSelectAttributesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXGoodsSelectAttributesView.m; sourceTree = "<group>"; };
 		16D8EC091F7B4B5B00F39A57 /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		16D8EC0B1F7B4C4000F39A57 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		16D9C51F1FC8104200B6C70D /* UIViewController+KNSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+KNSemiModal.h"; sourceTree = "<group>"; };
+		16D9C5201FC8104200B6C70D /* UIViewController+KNSemiModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+KNSemiModal.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -651,6 +654,8 @@
 			children = (
 				162AFCB31FBEDBF800304E01 /* LXProductDetailView.h */,
 				162AFCB41FBEDBF800304E01 /* LXProductDetailView.m */,
+				16CF78FE1FC2DE2D002A2737 /* LXGoodsSelectAttributesView.h */,
+				16CF78FF1FC2DE2D002A2737 /* LXGoodsSelectAttributesView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -906,8 +911,8 @@
 		16D68EDC1FBEEDED00F6FB5E /* SemiModal */ = {
 			isa = PBXGroup;
 			children = (
-				16D68EDD1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.h */,
-				16D68EDE1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.m */,
+				16D9C51F1FC8104200B6C70D /* UIViewController+KNSemiModal.h */,
+				16D9C5201FC8104200B6C70D /* UIViewController+KNSemiModal.m */,
 			);
 			path = SemiModal;
 			sourceTree = "<group>";
@@ -1070,7 +1075,6 @@
 				16A95B0E1F9062DD0059D457 /* BaseListViewController.m in Sources */,
 				1682650D1FA1E4A400B279A8 /* MJRefreshBackNormalFooter.m in Sources */,
 				161D16221F98997100E3646F /* MBProgressHUD.m in Sources */,
-				16D68EDF1FBEEDED00F6FB5E /* UIViewController+KNSemiModal.m in Sources */,
 				168265061FA1E4A400B279A8 /* MJRefreshComponent.m in Sources */,
 				162AF9911FA81383001FA72D /* LXNetworkErrorHeadView.m in Sources */,
 				166A37BA1F7CD27B00780CE8 /* PublicTools.m in Sources */,
@@ -1093,8 +1097,10 @@
 				168265141FA1E4A400B279A8 /* NSBundle+MJRefresh.m in Sources */,
 				166A379E1F7C94F900780CE8 /* NSObject+MJProperty.m in Sources */,
 				168265151FA1E4A400B279A8 /* UIScrollView+MJExtension.m in Sources */,
+				16D9C5211FC8104200B6C70D /* UIViewController+KNSemiModal.m in Sources */,
 				161D16261F98AF8700E3646F /* HUDTool.m in Sources */,
 				166A379B1F7C94F900780CE8 /* NSObject+MJClass.m in Sources */,
+				16CF79001FC2DE2D002A2737 /* LXGoodsSelectAttributesView.m in Sources */,
 				16A95A9D1F8C59F90059D457 /* MASViewAttribute.m in Sources */,
 				161D161E1F96F00100E3646F /* LXAlertView.m in Sources */,
 				1682651A1FA1E54600B279A8 /* LXRefreshHeader.m in Sources */,

@@ -12,6 +12,7 @@
 #import "HUDTool.h"
 #import <ImageIO/ImageIO.h>
 #import "LXProductDetailController.h"
+#import "UIViewController+KNSemiModal.h"
 
 #define kUserInfo @"kUserInfo"
 
@@ -27,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.showReloadBtn = YES;
     self.title = @"测试";
     NSDictionary *params = @{@"uid":@"",
@@ -48,6 +49,7 @@
     [self.view addSubview:button];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(push)];
+
 }
 
 - (void)loadData {

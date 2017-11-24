@@ -27,15 +27,15 @@
     UIButton *backButton = [UIButton buttonWithTitle:@"返回" withFontSize:15 withTitleColor:[UIColor blueColor] withTarget:self withAction:@selector(backButtonClick)];
     UIButton *goodsButton = [UIButton buttonWithTitle:@"商品" withFontSize:15 withTitleColor:[UIColor blueColor] withTarget:self withAction:@selector(productBtnClick)];
     UIButton *detailButton = [UIButton buttonWithTitle:@"详情" withFontSize:15 withTitleColor:[UIColor blueColor] withTarget:self withAction:@selector(productBtnClick)];
-    
+
     [self addSubview:self.navBarView];
     [self.navBarView addSubview:backButton];
     [self.navBarView addSubview:goodsButton];
     [self.navBarView addSubview:detailButton];
-    
+
     [self.navBarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self);
-        make.height.equalTo(@44);
+        make.height.equalTo(@64);
     }];
     [backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.bottom.equalTo(self.navBarView);
@@ -51,8 +51,6 @@
         make.width.equalTo(@44);
         make.centerX.equalTo(self.navBarView).offset(44);
     }];
-
-    
 }
 
 - (void)backButtonClick {
@@ -69,7 +67,7 @@
 - (UIView *)navBarView {
     if (!_navBarView) {
         _navBarView = [[UIView alloc] init];
-        _navBarView.backgroundColor = [UIColor redColor];
+        _navBarView.backgroundColor = [UIColor whiteColor];
     }
     return _navBarView;
 }

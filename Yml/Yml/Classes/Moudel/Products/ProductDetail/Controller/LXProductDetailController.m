@@ -8,9 +8,12 @@
 
 #import "LXProductDetailController.h"
 #import "LXProductDetailView.h"
+#import "LXGoodsSelectAttributesView.h"
 #import "UIViewController+KNSemiModal.h"
 
 @interface LXProductDetailController ()
+
+@property (nonatomic, strong) LXGoodsSelectAttributesView *selectAttributesView;
 
 @end
 
@@ -29,8 +32,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
     LXProductDetailView *productDetailView = [[LXProductDetailView alloc] initWithFrame:self.view.bounds];
     __weak typeof(self) weakself = self;
     productDetailView.productDetailBackBlock = ^{
@@ -41,16 +42,28 @@
         [weakself test];
     };
     
+    self.selectAttributesView.dissmissViewBlock = ^{
+//        [weakself dismissSemiModalView];
+    };
+    
     [self.view addSubview:productDetailView];
 }
 
 - (void)test {
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 375, 300)];
-    view.backgroundColor = [UIColor lightGrayColor];
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT*0.5)];
+    view.backgroundColor = [UIColor redColor];
     [self presentSemiView:view withOptions:@{
-                                             KNSemiModalOptionKeys.parentAlpha : @(0.8),
-                                             KNSemiModalOptionKeys.parentScale : @(0.9),
+                                             KNSemiModalOptionKeys.parentAlpha : @0.8,
+                                             KNSemiModalOptionKeys.parentScale : @0.9,
                                              }];
+}
+
+#pragma mark - Setter/Getter
+- (LXGoodsSelectAttributesView *)selectAttributesView {
+    if (!_selectAttributesView) {
+        _selectAttributesView = [[LXGoodsSelectAttributesView alloc] initWithFrame:self.view.bounds];
+    }
+    return _selectAttributesView;
 }
 
 @end
